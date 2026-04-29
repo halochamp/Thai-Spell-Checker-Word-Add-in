@@ -7,7 +7,7 @@
 ![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS-lightgrey)
 ![Offline](https://img.shields.io/badge/AI-Local%20%2F%20Offline-green)
 
----
+----
 
 ## 📖 เกี่ยวกับโปรเจค
 
