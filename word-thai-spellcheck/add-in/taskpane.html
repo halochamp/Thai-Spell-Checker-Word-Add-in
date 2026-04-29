@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thai Spell Checker</title>
+
+  <!-- Office.js CDN -->
+  <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
+  <link rel="stylesheet" href="taskpane.css" />
+</head>
+<body>
+  <div id="app">
+
+    <!-- Header -->
+    <div class="header">
+      <h1>Thai Spell Checker</h1>
+      <p class="subtitle">ตรวจคำผิดไทย · อังกฤษ · ทับศัพท์</p>
+    </div>
+
+    <!-- Status Bar (Ollama + Model) -->
+    <div id="status-bar" class="status-bar status-checking">
+      <span id="status-dot" class="dot"></span>
+      <span id="status-text">กำลังเชื่อมต่อ Ollama...</span>
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="actions">
+      <button id="btn-check" class="btn btn-primary" disabled>
+        ตรวจสอบ
+      </button>
+      <button id="btn-clear" class="btn btn-secondary" disabled>
+        ล้าง Highlight
+      </button>
+    </div>
+
+    <!-- Progress Bar -->
+    <div id="progress-container" class="progress-container hidden">
+      <div id="progress-bar" class="progress-bar"></div>
+      <span id="progress-text" class="progress-text">กำลังตรวจสอบ...</span>
+    </div>
+
+    <!-- Result Summary -->
+    <div id="result" class="result hidden"></div>
+
+    <!-- Error List -->
+    <div id="error-list" class="error-list"></div>
+
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    พัฒนาโดย <a href="https://www.poomwat.com" target="_blank">Poomwat — The Generalist Investor</a>
+  </footer>
+
+  <script src="taskpane.js"></script>
+</body>
+</html>

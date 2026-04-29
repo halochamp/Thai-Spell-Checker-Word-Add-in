@@ -10,8 +10,12 @@
 ## 🚦 Quick Status
 
 ### สถานะปัจจุบัน
-- วางแผนและออกแบบโครงสร้างแล้ว
-- ยังไม่ได้เขียน code
+- ✅ เขียน code ครบทุกไฟล์ตาม spec
+- ✅ Python server (FastAPI + Ollama) ทำงานได้
+- ✅ ทดสอบ `/check` ตรวจคำผิดได้จริง (ทับศัพท์ถูกต้องตามราชบัณฑิตยสภา)
+- ✅ HTTPS add-in server รันที่ localhost:3000
+- ✅ Self-signed certificate trust แล้วใน macOS Keychain
+- 🔴 ติดตั้ง Add-in ใน Word — ยังไม่ได้ทำ (upload manifest ไม่ได้)
 
 ### การตัดสินใจสำคัญ
 - **Sentence chunk** แทน paragraph chunk — ป้องกันตัดกลางคำ
@@ -291,3 +295,18 @@ ollama pull gemma4:e4b
 | 29 Apr 2026 | เพิ่ม error type field, อัปเดต prompt strategy, เพิ่ม Known Challenges |
 | 29 Apr 2026 | เพิ่ม UI: status bar แสดง model, footer เครดิตผู้พัฒนา |
 | 29 Apr 2026 | เพิ่มแผน 4 เฟส, ประมาณเวลา, และข้อมูลการ deploy แบบ sideload |
+| 29 Apr 2026 | สร้างโปรเจคครบทุกไฟล์: server/ และ add-in/ |
+| 29 Apr 2026 | ติดตั้ง dependencies, รัน server สำเร็จ |
+| 29 Apr 2026 | พบ bug: chunker.py ใช้ crfcut engine ที่ต้องการ pycrfsuite — แก้เป็น regex แทน |
+| 29 Apr 2026 | ทดสอบ /check endpoint สำเร็จ — ตรวจ "คอมพิวเตอ"→"คอมพิวเตอร์", "อินเตอเน็ต"→"อินเทอร์เน็ต" ได้ถูกต้อง |
+| 29 Apr 2026 | สร้าง self-signed cert, trust ใน macOS Keychain, รัน HTTPS server ที่ localhost:3000 สำเร็จ |
+| 29 Apr 2026 | หยุดที่เฟส 3 — ติดปัญหา upload manifest.xml ใน Word |
+
+## ความคืบหน้าเฟส
+
+| เฟส | สถานะ | หมายเหตุ |
+|---|---|---|
+| 1 Backend Core | ✅ เสร็จ | แก้ bug chunker engine แล้ว |
+| 2 FastAPI Server | ✅ เสร็จ | ทดสอบ /check /health /models ผ่านแล้ว |
+| 3 Word Add-in UI | 🔴 ค้างอยู่ | HTTPS server พร้อม แต่ upload manifest ใน Word ไม่ได้ |
+| 4 Polish & Distribution | ⏳ ยังไม่เริ่ม | |
